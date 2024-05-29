@@ -1,0 +1,37 @@
+$date
+	Mon Dec 14 10:43:11 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module MUX_tb $end
+$var wire 8 ! output_bus [7:0] $end
+$var reg 8 " input0 [7:0] $end
+$var reg 8 # input1 [7:0] $end
+$var reg 1 $ select $end
+$scope module instance1 $end
+$var wire 8 % input0 [7:0] $end
+$var wire 8 & input1 [7:0] $end
+$var wire 1 $ select $end
+$var reg 8 ' output_bus [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b101101 '
+b101101 &
+b1111 %
+0$
+b101101 #
+b1111 "
+b101101 !
+$end
+#40
+b1111 !
+b1111 '
+1$
+#80

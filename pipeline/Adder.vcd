@@ -1,0 +1,44 @@
+$date
+	Mon Dec 14 08:45:59 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module Adder_tb $end
+$var wire 1 ! overflow $end
+$var wire 16 " output1 [15:0] $end
+$var reg 1 # cin $end
+$var reg 16 $ input1 [15:0] $end
+$var reg 16 % input2 [15:0] $end
+$scope module instance1 $end
+$var wire 1 # cin $end
+$var wire 16 & input1 [15:0] $end
+$var wire 16 ' input2 [15:0] $end
+$var wire 1 ! overflow $end
+$var wire 16 ( output1 [15:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1111000 (
+b1011110 '
+b11010 &
+b1011110 %
+b11010 $
+0#
+b1111000 "
+0!
+$end
+#40
+b10011010 "
+b10011010 (
+1#
+b100001 %
+b100001 '
+b1111000 $
+b1111000 &
+#80

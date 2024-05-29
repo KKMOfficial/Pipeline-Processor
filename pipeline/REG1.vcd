@@ -1,0 +1,53 @@
+$date
+	Mon Dec 14 08:55:12 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module REG1_tb $end
+$var wire 12 ! serial_output [11:0] $end
+$var reg 1 " clk $end
+$var reg 1 # reset $end
+$var reg 12 $ serial_input [11:0] $end
+$scope module register1 $end
+$var wire 1 " clk $end
+$var wire 1 # reset $end
+$var wire 12 % serial_input [11:0] $end
+$var reg 12 & serial_output [11:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 &
+b1100 %
+b1100 $
+0#
+0"
+b0 !
+$end
+#20
+b1100 !
+b1100 &
+1"
+#40
+0"
+1#
+#60
+b0 !
+b0 &
+1"
+#80
+0"
+b1101 $
+b1101 %
+0#
+#100
+b1101 !
+b1101 &
+1"
+#120
+0"

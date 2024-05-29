@@ -1,0 +1,431 @@
+$date
+	Wed Dec 23 15:34:48 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module PipelineProcessor_tb $end
+$var reg 1 ! clk $end
+$scope module instance1 $end
+$var wire 1 ! clk $end
+$var wire 1 " final_reset_sig_id_exe $end
+$var wire 1 # zero_flag_mem $end
+$var wire 1 $ zero_flag_exe $end
+$var wire 1 % sign_flag_mem $end
+$var wire 1 & sign_flag_exe $end
+$var wire 8 ' rs_data_id [7:0] $end
+$var wire 8 ( rs_data_exe [7:0] $end
+$var wire 1 ) reg_write_wb $end
+$var wire 1 * reg_write_mem $end
+$var wire 1 + reg_write_id $end
+$var wire 1 , reg_write_exe $end
+$var wire 8 - rd_data_id [7:0] $end
+$var wire 8 . rd_data_exe [7:0] $end
+$var wire 8 / pc_output_if [7:0] $end
+$var wire 8 0 pc_input_if [7:0] $end
+$var wire 8 1 pc_adder_output_if [7:0] $end
+$var wire 1 2 overflow_flag_mem $end
+$var wire 1 3 overflow_flag_exe $end
+$var wire 1 4 overflow $end
+$var wire 1 5 mem_write_mem $end
+$var wire 1 6 mem_write_id $end
+$var wire 1 7 mem_write_exe $end
+$var wire 1 8 mem_to_reg_wb $end
+$var wire 1 9 mem_to_reg_mem $end
+$var wire 1 : mem_to_reg_id $end
+$var wire 1 ; mem_to_reg_exe $end
+$var wire 1 < mem_read_mem $end
+$var wire 1 = mem_read_id $end
+$var wire 1 > mem_read_exe $end
+$var wire 1 ? jump_sig_mem $end
+$var wire 3 @ jump_mem [2:0] $end
+$var wire 3 A jump_id [2:0] $end
+$var wire 3 B jump_exe [2:0] $end
+$var wire 16 C instruction_output_if [15:0] $end
+$var wire 16 D instruction_output_id [15:0] $end
+$var wire 8 E immidiate_mem [7:0] $end
+$var wire 8 F immidiate_id [7:0] $end
+$var wire 8 G immidiate_exe [7:0] $end
+$var wire 8 H final_second_operand_exe [7:0] $end
+$var wire 1 I do_stall $end
+$var wire 2 J do_forward_Rs [1:0] $end
+$var wire 2 K do_forward_Rd [1:0] $end
+$var wire 8 L data_mem_output_wb [7:0] $end
+$var wire 8 M data_mem_output_mem [7:0] $end
+$var wire 8 N data_lookup7 [7:0] $end
+$var wire 8 O data_lookup6 [7:0] $end
+$var wire 8 P data_lookup5 [7:0] $end
+$var wire 8 Q data_lookup4 [7:0] $end
+$var wire 8 R data_lookup3 [7:0] $end
+$var wire 8 S data_lookup2 [7:0] $end
+$var wire 8 T data_lookup1 [7:0] $end
+$var wire 8 U data_lookup0 [7:0] $end
+$var wire 1 V compare_mem $end
+$var wire 1 W compare_exe $end
+$var wire 1 X carry_out_exe $end
+$var wire 1 Y carry_flag_mem $end
+$var wire 1 Z carry_flag_exe $end
+$var wire 4 [ alu_select_id [3:0] $end
+$var wire 4 \ alu_select_exe [3:0] $end
+$var wire 1 ] alu_second_input_is_immidiate_id $end
+$var wire 1 ^ alu_second_input_is_immidiate_exe $end
+$var wire 8 _ alu_output_wb [7:0] $end
+$var wire 8 ` alu_output_mem [7:0] $end
+$var wire 8 a alu_output_exe [7:0] $end
+$var wire 8 b WriteData_wb [7:0] $end
+$var wire 3 c Rs_id [2:0] $end
+$var wire 3 d Rs_exe [2:0] $end
+$var wire 8 e Rs_MUX_out_exe [7:0] $end
+$var wire 3 f Rd_wb [2:0] $end
+$var wire 3 g Rd_mem [2:0] $end
+$var wire 3 h Rd_id [2:0] $end
+$var wire 3 i Rd_exe [2:0] $end
+$var wire 8 j Rd_MUX_out_exe [7:0] $end
+$scope module IM $end
+$var wire 1 ! clk $end
+$var wire 16 k instruction_output [15:0] $end
+$var wire 8 l address [7:0] $end
+$var integer 32 m i [31:0] $end
+$upscope $end
+$scope module Ins_Decode $end
+$var wire 16 n instruction [15:0] $end
+$var reg 8 o immidiate [7:0] $end
+$var reg 3 p reg1 [2:0] $end
+$var reg 3 q reg2 [2:0] $end
+$upscope $end
+$scope module Rd_MUX $end
+$var wire 8 r input0 [7:0] $end
+$var wire 8 s input1 [7:0] $end
+$var wire 8 t input3 [7:0] $end
+$var wire 8 u output0 [7:0] $end
+$var wire 2 v select [1:0] $end
+$var wire 8 w input2 [7:0] $end
+$upscope $end
+$scope module Reg_File $end
+$var wire 8 x ReadData1 [7:0] $end
+$var wire 8 y ReadData2 [7:0] $end
+$var wire 3 z ReadRegister1 [2:0] $end
+$var wire 3 { ReadRegister2 [2:0] $end
+$var wire 1 ) RegWrite $end
+$var wire 3 | WriteRegister [2:0] $end
+$var wire 1 ! clk $end
+$var wire 8 } WriteData [7:0] $end
+$var reg 8 ~ data_lookup0 [7:0] $end
+$var reg 8 !" data_lookup1 [7:0] $end
+$var reg 8 "" data_lookup2 [7:0] $end
+$var reg 8 #" data_lookup3 [7:0] $end
+$var reg 8 $" data_lookup4 [7:0] $end
+$var reg 8 %" data_lookup5 [7:0] $end
+$var reg 8 &" data_lookup6 [7:0] $end
+$var reg 8 '" data_lookup7 [7:0] $end
+$var integer 32 (" i [31:0] $end
+$upscope $end
+$scope module Rs_MUX $end
+$var wire 8 )" input0 [7:0] $end
+$var wire 8 *" input1 [7:0] $end
+$var wire 8 +" input3 [7:0] $end
+$var wire 8 ," output0 [7:0] $end
+$var wire 2 -" select [1:0] $end
+$var wire 8 ." input2 [7:0] $end
+$upscope $end
+$scope module alu_unit $end
+$var wire 8 /" input0 [7:0] $end
+$var wire 4 0" select [3:0] $end
+$var wire 8 1" input1 [7:0] $end
+$var reg 1 X carryout $end
+$var reg 1 W compare $end
+$var reg 8 2" dummy [7:0] $end
+$var reg 8 3" outputf [7:0] $end
+$upscope $end
+$scope module controller $end
+$var wire 10 4" opcode [9:0] $end
+$var reg 1 ] alu_second_input_is_immidiate $end
+$var reg 4 5" alu_select [3:0] $end
+$var reg 3 6" jump_type [2:0] $end
+$var reg 1 = mem_read $end
+$var reg 1 : mem_to_reg $end
+$var reg 1 6 mem_write $end
+$var reg 10 7" output_bus [9:0] $end
+$var reg 1 + reg_write $end
+$upscope $end
+$scope module data_mem $end
+$var wire 8 8" address [7:0] $end
+$var wire 1 ! clk $end
+$var wire 8 9" outputf [7:0] $end
+$var integer 32 :" i [31:0] $end
+$upscope $end
+$scope module exe_mem $end
+$var wire 1 ! clk $end
+$var wire 1 ;" nen_write $end
+$var wire 1 <" reset $end
+$var wire 31 =" serial_input [30:0] $end
+$var reg 31 >" serial_output [30:0] $end
+$upscope $end
+$scope module flag_unit $end
+$var wire 8 ?" Rd_MUX_out [7:0] $end
+$var wire 8 @" Rs_MUX_out [7:0] $end
+$var wire 4 A" alu_operation [3:0] $end
+$var wire 8 B" alu_output [7:0] $end
+$var wire 1 X carryout $end
+$var reg 1 C" carry_flag $end
+$var reg 4 D" flag_set_output [3:0] $end
+$var reg 1 E" overflow_flag $end
+$var reg 1 F" sign_flag $end
+$var reg 1 G" zero_flag $end
+$upscope $end
+$scope module fw_u $end
+$var wire 3 H" Rd_exe [2:0] $end
+$var wire 3 I" Rd_mem [2:0] $end
+$var wire 3 J" Rd_wb [2:0] $end
+$var wire 3 K" Rs_exe [2:0] $end
+$var wire 1 * reg_write_mem $end
+$var wire 1 ) reg_write_wb $end
+$var reg 2 L" do_forward_Rd [1:0] $end
+$var reg 2 M" do_forward_Rs [1:0] $end
+$upscope $end
+$scope module id_exe $end
+$var wire 1 ! clk $end
+$var wire 1 N" nen_write $end
+$var wire 1 " reset $end
+$var wire 42 O" serial_input [41:0] $end
+$var reg 42 P" serial_output [41:0] $end
+$upscope $end
+$scope module if_id $end
+$var wire 1 ! clk $end
+$var wire 16 Q" serial_input [15:0] $end
+$var wire 1 ? reset $end
+$var wire 1 I nen_write $end
+$var reg 16 R" serial_output [15:0] $end
+$upscope $end
+$scope module j_unit $end
+$var wire 1 Y carry_flag $end
+$var wire 3 S" jump_type [2:0] $end
+$var wire 1 2 overflow_flag $end
+$var wire 1 % sign_flag $end
+$var wire 1 # zero_flag $end
+$var reg 1 ? jump $end
+$upscope $end
+$scope module ls_u $end
+$var wire 3 T" Rd_ex [2:0] $end
+$var wire 3 U" Rd_id [2:0] $end
+$var wire 3 V" Rs_id [2:0] $end
+$var wire 1 I do_stall $end
+$var wire 1 > mem_read_exe $end
+$upscope $end
+$scope module mem_wb $end
+$var wire 1 ! clk $end
+$var wire 1 W" nen_write $end
+$var wire 1 X" reset $end
+$var wire 21 Y" serial_input [20:0] $end
+$var reg 21 Z" serial_output [20:0] $end
+$upscope $end
+$scope module pc $end
+$var wire 1 ! clk $end
+$var wire 1 I nen_write $end
+$var wire 1 [" reset $end
+$var wire 8 \" serial_input [7:0] $end
+$var reg 8 ]" serial_output [7:0] $end
+$upscope $end
+$scope module pc_adder $end
+$var wire 1 ^" cin $end
+$var wire 8 _" input1 [7:0] $end
+$var wire 8 `" input2 [7:0] $end
+$var wire 1 4 overflow $end
+$var wire 8 a" output1 [7:0] $end
+$upscope $end
+$scope module pc_mux $end
+$var wire 8 b" input0 [7:0] $end
+$var wire 8 c" input1 [7:0] $end
+$var wire 8 d" output_bus [7:0] $end
+$var wire 1 ? select $end
+$upscope $end
+$scope module second_reg_input $end
+$var wire 8 e" input0 [7:0] $end
+$var wire 8 f" input1 [7:0] $end
+$var wire 8 g" output_bus [7:0] $end
+$var wire 1 ^ select $end
+$upscope $end
+$scope module wb_MUX $end
+$var wire 8 h" input0 [7:0] $end
+$var wire 8 i" input1 [7:0] $end
+$var wire 8 j" output_bus [7:0] $end
+$var wire 1 8 select $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 j"
+b0 i"
+b0 h"
+b0 g"
+b0 f"
+b0 e"
+b1 d"
+b0 c"
+b1 b"
+b1 a"
+b0 `"
+b1 _"
+0^"
+b0 ]"
+b1 \"
+0["
+b0 Z"
+b0 Y"
+0X"
+0W"
+b0 V"
+b101 U"
+b0 T"
+b0 S"
+b1011110100001000 R"
+b1011110100001000 Q"
+b0 P"
+b1011111000000000000000000010100001000 O"
+0N"
+b0 M"
+b0 L"
+b0 K"
+b0 J"
+b0 I"
+b0 H"
+1G"
+0F"
+0E"
+b1000 D"
+0C"
+b0 B"
+b0 A"
+b0 @"
+b0 ?"
+b0 >"
+b1000000000000000000000000001 ="
+0<"
+0;"
+b100000000 :"
+b0 9"
+b0 8"
+b1011111 7"
+b0 6"
+b101 5"
+b1011110100 4"
+b0 3"
+bx 2"
+b0 1"
+b0 0"
+b0 /"
+b0 ."
+b0 -"
+b0 ,"
+b0 +"
+b0 *"
+b0 )"
+b1000 ("
+b0 '"
+b0 &"
+b0 %"
+b101101 $"
+b0 #"
+b0 ""
+b0 !"
+b0 ~
+b0 }
+b0 |
+b0 {
+b101 z
+b0 y
+b0 x
+b0 w
+b0 v
+b0 u
+b0 t
+b0 s
+b0 r
+b0 q
+b101 p
+b1000 o
+b1011110100001000 n
+b100000000 m
+b0 l
+b1011110100001000 k
+b0 j
+b0 i
+b101 h
+b0 g
+b0 f
+b0 e
+b0 d
+b0 c
+b0 b
+b0 a
+b0 `
+b0 _
+0^
+1]
+b0 \
+b101 [
+0Z
+0Y
+0X
+1W
+0V
+b0 U
+b0 T
+b0 S
+b0 R
+b101101 Q
+b0 P
+b0 O
+b0 N
+b0 M
+b0 L
+b0 K
+b0 J
+0I
+b0 H
+b0 G
+b1000 F
+b0 E
+b1011110100001000 D
+b1011110100001000 C
+b0 B
+b0 A
+b0 @
+0?
+0>
+1=
+0<
+0;
+1:
+09
+08
+07
+06
+05
+04
+03
+02
+b1 1
+b1 0
+b0 /
+b0 .
+b0 -
+0,
+1+
+0*
+0)
+b0 (
+b0 '
+0&
+0%
+1$
+0#
+0"
+0!
+$end
+#25

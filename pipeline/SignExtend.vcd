@@ -1,0 +1,36 @@
+$date
+	Mon Dec 14 09:43:21 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module SignExtend_tb $end
+$var wire 16 ! output_bus [15:0] $end
+$var reg 8 " input_bus [7:0] $end
+$scope module instance1 $end
+$var wire 8 # inputData [7:0] $end
+$var reg 16 $ outputData [15:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b100 $
+b100 #
+b100 "
+b100 !
+$end
+#20
+b11100000 !
+b11100000 $
+b11100000 "
+b11100000 #
+#40
+b10 !
+b10 $
+b10 "
+b10 #
+#60

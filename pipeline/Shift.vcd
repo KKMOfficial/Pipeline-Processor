@@ -1,0 +1,31 @@
+$date
+	Mon Dec 14 11:38:56 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module Shift_tb $end
+$var wire 8 ! output0 [7:0] $end
+$var reg 8 " input0 [7:0] $end
+$scope module instance1 $end
+$var wire 8 # input0 [7:0] $end
+$var reg 8 $ output0 [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b110000 $
+b1100 #
+b1100 "
+b110000 !
+$end
+#40
+b1011100 !
+b1011100 $
+b10111 "
+b10111 #
+#80

@@ -1,0 +1,79 @@
+#! /usr/local/iverilog/bin/vvp
+:ivl_version "11.0 (devel)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000000000896020 .scope module, "Adder_tb" "Adder_tb" 2 4;
+ .timescale 0 0;
+P_00000000008859f0 .param/l "bus_width" 0 2 4, +C4<00000000000000000000000000010000>;
+v0000000000892b60_0 .var "cin", 0 0;
+v0000000000892520_0 .var "input1", 15 0;
+v0000000000892de0_0 .var "input2", 15 0;
+v0000000000892a20_0 .net "output1", 15 0, L_0000000000892f20;  1 drivers
+v00000000008923e0_0 .net "overflow", 0 0, L_0000000000892200;  1 drivers
+S_00000000008961b0 .scope module, "instance1" "Adder" 2 15, 3 1 0, S_0000000000896020;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "cin";
+    .port_info 1 /INPUT 16 "input1";
+    .port_info 2 /INPUT 16 "input2";
+    .port_info 3 /OUTPUT 16 "output1";
+    .port_info 4 /OUTPUT 1 "overflow";
+P_0000000000885d30 .param/l "bus_width" 0 3 1, +C4<00000000000000000000000000010000>;
+L_00000000008dff20 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v000000000120bc60_0 .net *"_ivl_10", 0 0, L_00000000008dff20;  1 drivers
+v0000000000863120_0 .net *"_ivl_11", 16 0, L_0000000000892d40;  1 drivers
+v0000000000887cc0_0 .net *"_ivl_13", 16 0, L_0000000000892ca0;  1 drivers
+L_00000000008dff68 .functor BUFT 1, C4<0000000000000000>, C4<0>, C4<0>, C4<0>;
+v0000000000896340_0 .net *"_ivl_16", 15 0, L_00000000008dff68;  1 drivers
+v00000000008963e0_0 .net *"_ivl_17", 16 0, L_0000000000892020;  1 drivers
+v00000000008df840_0 .net *"_ivl_3", 16 0, L_0000000000892c00;  1 drivers
+L_00000000008dfed8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v00000000008df8e0_0 .net *"_ivl_6", 0 0, L_00000000008dfed8;  1 drivers
+v00000000008df980_0 .net *"_ivl_7", 16 0, L_00000000008928e0;  1 drivers
+v00000000008dfa20_0 .net "cin", 0 0, v0000000000892b60_0;  1 drivers
+v0000000000892840_0 .net "input1", 15 0, v0000000000892520_0;  1 drivers
+v00000000008922a0_0 .net "input2", 15 0, v0000000000892de0_0;  1 drivers
+v0000000000892e80_0 .net "output1", 15 0, L_0000000000892f20;  alias, 1 drivers
+v0000000000892980_0 .net "overflow", 0 0, L_0000000000892200;  alias, 1 drivers
+L_0000000000892200 .part L_0000000000892020, 16, 1;
+L_0000000000892f20 .part L_0000000000892020, 0, 16;
+L_0000000000892c00 .concat [ 16 1 0 0], v0000000000892520_0, L_00000000008dfed8;
+L_00000000008928e0 .concat [ 16 1 0 0], v0000000000892de0_0, L_00000000008dff20;
+L_0000000000892d40 .arith/sum 17, L_0000000000892c00, L_00000000008928e0;
+L_0000000000892ca0 .concat [ 1 16 0 0], v0000000000892b60_0, L_00000000008dff68;
+L_0000000000892020 .arith/sum 17, L_0000000000892d40, L_0000000000892ca0;
+    .scope S_0000000000896020;
+T_0 ;
+    %vpi_call 2 6 "$dumpfile", "Adder.vcd" {0 0 0};
+    %vpi_call 2 7 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000000000896020 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0000000000896020;
+T_1 ;
+    %pushi/vec4 26, 0, 16;
+    %store/vec4 v0000000000892520_0, 0, 16;
+    %pushi/vec4 94, 0, 16;
+    %store/vec4 v0000000000892de0_0, 0, 16;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000892b60_0, 0, 1;
+    %delay 40, 0;
+    %pushi/vec4 120, 0, 16;
+    %store/vec4 v0000000000892520_0, 0, 16;
+    %pushi/vec4 33, 0, 16;
+    %store/vec4 v0000000000892de0_0, 0, 16;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000892b60_0, 0, 1;
+    %delay 40, 0;
+    %vpi_call 2 27 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "Adder_tb.v";
+    "./Adder.v";

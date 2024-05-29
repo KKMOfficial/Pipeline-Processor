@@ -1,0 +1,52 @@
+$date
+	Sat Dec 12 20:15:23 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module InstructionMemory_tb $end
+$var wire 16 ! instruction_output [15:0] $end
+$var reg 8 " address [7:0] $end
+$var reg 1 # clk $end
+$scope module instance1 $end
+$var wire 8 $ address [7:0] $end
+$var wire 1 # clk $end
+$var reg 16 % instruction_output [15:0] $end
+$var integer 32 & i [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b100000000 &
+b0 %
+b0 $
+0#
+b0 "
+b0 !
+$end
+#20
+b1111 !
+b1111 %
+1#
+#40
+0#
+b1 "
+b1 $
+#60
+b1001011 !
+b1001011 %
+1#
+#80
+0#
+b1110 "
+b1110 $
+#100
+b0 !
+b0 %
+1#
+#120
+0#

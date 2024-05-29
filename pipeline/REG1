@@ -1,0 +1,95 @@
+#! /usr/local/iverilog/bin/vvp
+:ivl_version "11.0 (devel)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000000000896420 .scope module, "REG1_tb" "REG1_tb" 2 2;
+ .timescale 0 0;
+P_0000000000885e40 .param/l "reg_size" 0 2 2, +C4<00000000000000000000000000001100>;
+v0000000000893cd0_0 .var "clk", 0 0;
+v0000000000893d70_0 .var "reset", 0 0;
+v0000000000893e10_0 .var "serial_input", 11 0;
+v0000000000893eb0_0 .net "serial_output", 11 0, v00000000008967e0_0;  1 drivers
+S_00000000008965b0 .scope module, "register1" "REG1" 2 18, 3 1 0, S_0000000000896420;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "reset";
+    .port_info 2 /INPUT 12 "serial_input";
+    .port_info 3 /OUTPUT 12 "serial_output";
+P_0000000000886140 .param/l "reg_size" 0 3 1, +C4<00000000000000000000000000001100>;
+v00000000001bbc20_0 .net "clk", 0 0, v0000000000893cd0_0;  1 drivers
+v0000000000863120_0 .net "reset", 0 0, v0000000000893d70_0;  1 drivers
+v0000000000896740_0 .net "serial_input", 11 0, v0000000000893e10_0;  1 drivers
+v00000000008967e0_0 .var "serial_output", 11 0;
+E_0000000000886280 .event posedge, v00000000001bbc20_0;
+    .scope S_00000000008965b0;
+T_0 ;
+    %pushi/vec4 0, 0, 12;
+    %store/vec4 v00000000008967e0_0, 0, 12;
+    %end;
+    .thread T_0;
+    .scope S_00000000008965b0;
+T_1 ;
+    %wait E_0000000000886280;
+    %load/vec4 v0000000000863120_0;
+    %flag_set/vec4 8;
+    %jmp/0 T_1.0, 8;
+    %pushi/vec4 0, 0, 12;
+    %jmp/1 T_1.1, 8;
+T_1.0 ; End of true expr.
+    %load/vec4 v0000000000896740_0;
+    %jmp/0 T_1.1, 8;
+ ; End of false expr.
+    %blend;
+T_1.1;
+    %assign/vec4 v00000000008967e0_0, 0;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0000000000896420;
+T_2 ;
+    %vpi_call 2 5 "$dumpfile", "REG1.vcd" {0 0 0};
+    %vpi_call 2 6 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000000000896420 {0 0 0};
+    %end;
+    .thread T_2;
+    .scope S_0000000000896420;
+T_3 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000893cd0_0, 0, 1;
+    %end;
+    .thread T_3;
+    .scope S_0000000000896420;
+T_4 ;
+    %delay 20, 0;
+    %load/vec4 v0000000000893cd0_0;
+    %inv;
+    %store/vec4 v0000000000893cd0_0, 0, 1;
+    %jmp T_4;
+    .thread T_4;
+    .scope S_0000000000896420;
+T_5 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000893d70_0, 0, 1;
+    %pushi/vec4 12, 0, 12;
+    %store/vec4 v0000000000893e10_0, 0, 12;
+    %delay 40, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000893d70_0, 0, 1;
+    %delay 40, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000893d70_0, 0, 1;
+    %pushi/vec4 13, 0, 12;
+    %store/vec4 v0000000000893e10_0, 0, 12;
+    %delay 40, 0;
+    %vpi_call 2 33 "$finish" {0 0 0};
+    %end;
+    .thread T_5;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "REG1_tb.v";
+    "./REG1.v";

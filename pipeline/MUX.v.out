@@ -1,0 +1,40 @@
+#! /usr/local/iverilog/bin/vvp
+:ivl_version "11.0 (devel)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_00000000001f6980 .scope module, "MUX" "MUX" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "input0";
+    .port_info 1 /INPUT 4 "input1";
+    .port_info 2 /INPUT 1 "select";
+    .port_info 3 /OUTPUT 4 "output_bus";
+P_00000000001f8ba0 .param/l "in_width" 0 2 1, +C4<00000000000000000000000000000100>;
+o0000000001027158 .functor BUFZ 1, C4<z>; HiZ drive
+L_00000000001f6f80 .functor NOT 1, o0000000001027158, C4<0>, C4<0>, C4<0>;
+o00000000010270c8 .functor BUFZ 4, C4<zzzz>; HiZ drive
+L_00000000001fed60 .functor AND 4, o00000000010270c8, L_00000000001fec30, C4<1111>, C4<1111>;
+o00000000010270f8 .functor BUFZ 4, C4<zzzz>; HiZ drive
+L_00000000001fef00 .functor AND 4, o00000000010270f8, L_00000000001fedd0, C4<1111>, C4<1111>;
+L_0000000001020c90/d .functor OR 4, L_00000000001fed60, L_00000000001fef00, C4<0000>, C4<0000>;
+L_0000000001020c90 .delay 4 (0,0,0) L_0000000001020c90/d;
+v00000000001f6b10_0 .net *"_ivl_0", 0 0, L_00000000001f6f80;  1 drivers
+v00000000001f6bb0_0 .net *"_ivl_2", 3 0, L_00000000001fec30;  1 drivers
+v00000000001f6c50_0 .net *"_ivl_4", 3 0, L_00000000001fed60;  1 drivers
+v00000000001f6cf0_0 .net *"_ivl_6", 3 0, L_00000000001fedd0;  1 drivers
+v00000000001f6d90_0 .net *"_ivl_8", 3 0, L_00000000001fef00;  1 drivers
+v00000000001fe920_0 .net "input0", 3 0, o00000000010270c8;  0 drivers
+v00000000001fe9c0_0 .net "input1", 3 0, o00000000010270f8;  0 drivers
+v00000000001fea60_0 .net "output_bus", 3 0, L_0000000001020c90;  1 drivers
+v00000000001feb00_0 .net "select", 0 0, o0000000001027158;  0 drivers
+L_00000000001fec30 .concat [ 1 1 1 1], L_00000000001f6f80, L_00000000001f6f80, L_00000000001f6f80, L_00000000001f6f80;
+L_00000000001fedd0 .concat [ 1 1 1 1], o0000000001027158, o0000000001027158, o0000000001027158, o0000000001027158;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "MUX.v";
